@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	
+	<title>HW03</title>
+	
+</head>
+
+<body>
+	
+
+
+
+	<script>
+		
+
+//		Задание 1.
+		var bool = true;
+
+		for(var numb = 2; numb <= 100; numb++) {
+
+			for(var count = 2; count <= numb; count++) {
+				if((numb % count == 0)&&(numb / count != 1)) {
+					bool = false;
+				}
+			}
+
+			if(bool==true) {
+				document.write(numb + "  ");			
+			}
+			
+			bool = true;
+		}
+
+
+
+		document.write("<br><br>");
+
+//		Задание 2.
+
+		var basket = [
+			{
+				title: "Death Stranding",
+				price: 3500
+			},
+			{
+				title: "DOOM Eternal",
+				price: 4500
+			},
+			{
+				title: "Resident Evil 3",
+				price: 4000
+			}
+		]
+
+		document.write("В Вашей корзине<br>");
+
+		for(var good of basket) {
+			
+			document.writeln("Товар: " + good.title + ", стоимость: " + good.price + "<br>");
+
+		}
+
+		document.write("<br>");
+
+//		Задание 3.
+		
+		function countBasketPrice(basket) {
+
+			var basketcost = 0;
+
+			for(var good of basket) {
+
+				basketcost = basketcost + good.price;
+
+			}
+
+			return basketcost
+
+		}
+
+		document.write("Стоимость товаров в корзине: " + countBasketPrice(basket));
+
+		document.write("<br><br>");
+
+//		Задание 4.
+
+		for (var k = 0; k < 9; k++, document.write(k)) {}
+
+		document.write("<br><br>");
+
+//		Задание 5.
+
+		var arr = [];
+    	
+    	while (arr.length < 20) {
+        	arr.push('x');
+        	document.writeln(arr + "<br>");
+    	}
+
+
+	
+	</script>
+</body>
+</html>
