@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	
+	<title>HW04</title>
+	
+</head>
+
+<body>
+	
+
+
+
+	<script>
+		
+	//		Задание 1.
+
+		function getObject(number) {
+    		
+    		var obj = {};
+    
+    		obj[ 'едининцы' ] = number % 10;
+        	obj[ 'десятки' ] = (number - obj[ 'едининцы' ]) % 100 / 10;
+        	obj[ 'сотни' ] = (number - obj[ 'едининцы' ] - obj[ 'десятки' ] * 10) % 1000 / 100;
+        	
+        	return obj;
+        }
+		
+		var Number = parseInt(prompt('Введите число от 0 до 999'));
+		
+		while (Number < 0 || Number > 999) {
+			var Number = parseInt(prompt('Введите число от 0 до 999'));
+		}
+
+		console.log( getObject(Number));
+
+	//		Задание 2.
+	
+	</script>
+</body>
+</html>
