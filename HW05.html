@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	
+	<title>HW05</title>
+
+	<link rel="stylesheet" href="HW05.css">
+	
+</head>
+
+<body>
+	
+
+	<script>
+		
+	function chess() {
+
+    var chessArray =
+    [
+        [' ','A','B','C','D','E','F','G','H',' '],
+        ['1','&#9820;','&#9822;','&#9821;','&#9819;','&#9818;','&#9821;','&#9822;','&#9820;','1'],
+        ['2','&#9823;','&#9823;','&#9823;','&#9823;','&#9823;','&#9823;','&#9823;','&#9823;','2'],
+        ['3',' ',' ',' ',' ',' ',' ',' ',' ','3'],
+        ['4',' ',' ',' ',' ',' ',' ',' ',' ','4'],
+        ['5',' ',' ',' ',' ',' ',' ',' ',' ','5'],
+        ['6',' ',' ',' ',' ',' ',' ',' ',' ','6'],
+        ['7','&#9817;','&#9817;','&#9817;','&#9817;','&#9817;','&#9817;','&#9817;','&#9817;','7'],
+        ['8','&#9814;','&#9816;','&#9815;','&#9813;','&#9812;','&#9815;','&#9816;','&#9814;','8'],
+        [' ','A','B','C','D','E','F','G','H',' ']
+    ];
+
+    var chessTable = document.createElement("table");
+        
+    for (var i = 0; i < 10; i++) {
+    	
+    	var chessRow = document.createElement("tr");
+        
+        for (var j = 0; j < 10; j++) {
+            
+            var chessCell = document.createElement("td");
+    		
+    		chessCell.innerHTML = chessArray[i][j];
+
+    		if ((i == 0 || i == 9) || ((i + j) % 2 == 0)) {
+    			chessCell.className += 'white';
+    		} else {
+    			chessCell.className += 'brown';
+    		}
+
+    		if ((j == 9)|| (i == 0)) {
+    			chessCell.className += ' rotate';
+    		}
+
+    		chessRow.append(chessCell);
+    	}
+
+    	chessTable.append(chessRow);
+    
+    }
+    
+
+    document.body.append(chessTable);
+
+    }
+
+	chess();
+	
+	</script>
+</body>
+</html>
